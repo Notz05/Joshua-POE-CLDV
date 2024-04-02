@@ -6,10 +6,10 @@
     <title>About Us</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Calibri, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4; /* Change the background color to light neutral */
+            background-color: lightgray;
         }
 
         .container {
@@ -17,36 +17,49 @@
             margin: 50px auto;
             padding: 20px;
             background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         h1 {
-            text-align: center;
+            font-size: 36px;
             margin-bottom: 30px;
+            text-align: center;
+            color: #333;
         }
 
         .character {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             margin-bottom: 40px;
-            overflow: hidden;
         }
 
             .character img {
-                float: left;
-                margin-right: 20px;
+                width: 200px;
+                height: 200px;
                 border-radius: 50%;
+                margin-bottom: 20px;
             }
 
         .character-details {
-            overflow: hidden;
+            text-align: center;
         }
 
             .character-details h2 {
-                margin-top: 0;
+                font-size: 24px;
+                margin: 10px 0;
+                color: #007bff;
             }
 
             .character-details p {
+                font-size: 16px;
                 margin-bottom: 10px;
+                color: #666;
+                line-height: 1.6;
             }
     </style>
 </head>
@@ -57,7 +70,7 @@
 
         <!-- Khumalo -->
         <div class="character">
-            <img src="C:\Users\joshu\source\repos\Joshua-POE-CLDV\wwwroot\Images\OIP.jfif" alt="Khumalo">
+            <img src="~/Images/tech-product.jpg" alt="Khumalo">
             <div class="character-details">
                 <h2>Khumalo</h2>
                 <p>Founder & CEO</p>
@@ -65,9 +78,9 @@
             </div>
         </div>
 
-        <!-- Fictional Character 1 -->
+        
         <div class="character">
-            <img src="C:\Users\joshu\source\repos\Joshua-POE-CLDV\wwwroot\Images\OIP (1).jfif" alt="Aryan Lutchminarian">
+            <img src="~/Images/istockphoto-1254942778-612x612.jpg" alt="Aryan Lutchminarian">
             <div class="character-details">
                 <h2>Aryan Lutchminarian</h2>
                 <p>Artisan Liaison</p>
@@ -75,9 +88,9 @@
             </div>
         </div>
 
-        <!-- Fictional Character 2 -->
+        
         <div class="character">
-            <img src="C:\Users\joshu\source\repos\Joshua-POE-CLDV\wwwroot\Images\istockphoto-1453312317-170667a.jpg" alt="Mikyle Gounden">
+            <img src="~/Images/Depositphotos_19288743_youngbusinessman.jpg" alt="Mikyle Gounden">
             <div class="character-details">
                 <h2>Mikyle Gounden</h2>
                 <p>Marketing Specialist</p>
@@ -85,9 +98,9 @@
             </div>
         </div>
 
-        <!-- Fictional Character 3 -->
+        
         <div class="character">
-            <img src="C:\Users\joshu\source\repos\Joshua-POE-CLDV\wwwroot\Images\OIP (3).jfif" alt="Lethabo Mashilo">
+            <img src="~/Images/istockphoto-1453312317-170667a.jpg" alt="Lethabo Mashilo">
             <div class="character-details">
                 <h2>Lethabo Mashilo</h2>
                 <p>Customer Experience Manager</p>

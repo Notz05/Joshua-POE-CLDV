@@ -1,8 +1,117 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to KhumaloCraft</title>
+    <style>
+        body {
+            font-family: Calibri, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lightgray;
+            color: #333;
+        }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .featured-products {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .product {
+            width: 30%;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+            .product img {
+                width: 100%;
+                border-radius: 8px;
+            }
+
+        .product-name {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .cta-buttons {
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            width: 200px;
+            margin: 20px;
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+            .cta-button:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to KhumaloCraft</h1>
+        <p>KhumaloCraft Emporium is your gateway to a world of exquisite handcrafted products. Explore our curated collection of artisanal creations crafted with passion and skill from around the globe.</p>
+
+        <h2>Featured Products</h2>
+        <div class="featured-products">
+            <div class="product">
+                <img src="~/Images/Bowl.jpg" alt="Craftwork 1">
+                <div class="product-name">Handcrafted Wooden Bowl</div>
+            </div>
+            <div class="product">
+                <img src="~/Images/Blankey.jpg" alt="Craftwork 2">
+                <div class="product-name">Handwoven Cotton Throw Blanket</div>
+            </div>
+            <div class="product">
+                <img src="~/Images/Muggie.jpg" alt="Craftwork 3">
+                <div class="product-name">Hand-Painted Ceramic Mug Set</div>
+            </div>
+        </div>
+
+        <div class="cta-buttons">
+            <p>For more information on the products or what we are about:</p>
+            <a href="/Home/AboutUs" class="cta-button">About Us</a>
+            <a href="/Home/MyWork" class="cta-button">My Work</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

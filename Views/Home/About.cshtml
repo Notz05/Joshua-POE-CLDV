@@ -1,18 +1,96 @@
-﻿@page
-@model Joshua_POE_CLDV.Views.Home.AboutModel
-@{
-    ViewData["Title"] = "About";
-}
-<h1> About </h1>
-<p> This is the about us</p>
-<img src ="~/css/" >
-<body> 
-    <form action =" About" method= "post">
-        <p> Please enter your first and last name</p>
-        <input type ="text" name="user_Name" placeholder="required">
-        <input type="text" name="user_Surname" placeholder="required">
-        <input type="text" name="user_Email" placeholder="required">
-        <button type="submit">Submit</button>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - KhumaloCraft</title>
+    <style>
+        body {
+            font-family: Calibri, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lightgray; 
+            text-align: center;
+        }
 
-    </form>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            width: 200px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 30px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+            button[type="submit"]:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>About Us</h1>
+        <p>Welcome to KhumaloCraft - Your destination for handcrafted excellence.</p>
+        <img src="placeholder_image.jpg" alt="Company Logo">
+
+        <form action="about" method="post">
+            <p>Please provide your details to get in touch:</p>
+            <input type="text" name="user_Name" placeholder="First Name" required>
+            <input type="text" name="user_Surname" placeholder="Last Name" required>
+            <input type="email" name="user_Email" placeholder="Email Address" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
 </body>
+</html>
