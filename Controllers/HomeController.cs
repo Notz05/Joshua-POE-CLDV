@@ -13,12 +13,14 @@ namespace Joshua_POE_CLDV.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+       
+
+        public IActionResult ContactUs()
         {
             return View();
         }
 
-        public IActionResult ContactUs()
+        public IActionResult Index()
         {
             return View();
         }

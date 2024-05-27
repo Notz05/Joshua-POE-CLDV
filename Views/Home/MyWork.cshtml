@@ -68,6 +68,14 @@
                 text-align: center;
                 color: #666666;
             }
+
+        .cart {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
@@ -82,6 +90,7 @@
                 <h2>Handcrafted Wooden Bowl</h2>
                 <p>Description: This exquisite handcrafted wooden bowl is made from sustainably sourced teak wood. With its smooth finish and unique grain patterns, it adds a touch of elegance to any kitchen or dining table. Perfect for serving salads, fruits, or snacks.</p>
                 <p>Price: R350.00</p>
+                <button onclick="addToCart(1)">Add to Cart</button>
             </div>
         </div>
 
@@ -92,6 +101,7 @@
                 <h2>Handwoven Cotton Throw Blanket</h2>
                 <p>Description: Wrap yourself in cozy comfort with our handwoven cotton throw blanket. Made from 100% organic cotton by skilled artisans, this blanket features intricate geometric patterns and vibrant colors. Whether used as a stylish accent on your sofa or as a warm layer on chilly nights, it's a versatile addition to any home.</p>
                 <p>Price: R500.00</p>
+                <button onclick="addToCart(2)">Add to Cart</button>
             </div>
         </div>
 
@@ -102,10 +112,51 @@
                 <h2>Hand-Painted Ceramic Mug Set</h2>
                 <p>Description: Elevate your morning coffee ritual with our hand-painted ceramic mug set. Each mug is carefully crafted and painted by talented artisans, making each piece unique. The set includes four mugs, each featuring a different nature-inspired design. These mugs are dishwasher and microwave safe, making them both functional and beautiful.</p>
                 <p>Price: R400.00 (Set of 4)</p>
+                <button onclick="addToCart(3)">Add to Cart</button>
             </div>
         </div>
 
+        <!-- Cart Section -->
+        <div class="cart">
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </ul>
+            <p id="cart-total">Total: R0.00</p>
+        </div>
+    </div>
 
+    <script>
+        async function addToCart(productId) {
+            const response = await fetch(`/api/cart/${productId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            const cartItem = await response.json();
+            renderCart();
+        }
 
+        async function renderCart() {
+            const response = await fetch('/api/cart');
+            const cartItems = await response.json();
+            const cartItemsList = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+
+            cartItemsList.innerHTML = '';
+            let total = 0;
+            cartItems.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.product.name} - R${item.product.price.toFixed(2)} (x${item.quantity})`;
+                cartItemsList.appendChild(li);
+                total += item.product.price * item.quantity;
+            });
+
+            cartTotal.textContent = `Total: R${total.toFixed(2)}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', renderCart);
+    </script>
 </body>
 </html>
